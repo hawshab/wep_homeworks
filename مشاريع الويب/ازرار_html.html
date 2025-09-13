@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأزرار وأنواعها في HTML</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body {
+            background: linear-gradient(135deg, #fff3b0, #ffd6a5, #a0c4ff);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background-color: rgba(255,255,255,0.85);
+            border-radius: 20px;
+            overflow: hidden;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        header { text-align:center; margin-bottom:30px; }
+        h1 { font-size:2.8rem; color:#ffb703; }
+        .intro {
+            font-size:1.2rem;
+            max-width:800px;
+            margin:0 auto 30px;
+            line-height:1.8;
+            padding:20px;
+            background: rgba(255, 243, 176, 0.3);
+            border-radius: 10px;
+        }
+        .cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:25px; margin-bottom:30px; }
+        .card {
+            background: #fff9f0;
+            border-radius:15px;
+            padding:25px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card h2 {
+            font-size:1.6rem;
+            margin-bottom:15px;
+            color:#fb8500;
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+        .card h2 i { background:#ffd60a; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+        .description { font-size:1.1rem; margin-bottom:20px; line-height:1.6; }
+        .form-demo { background: rgba(255,255,255,0.6); padding:15px; border-radius:8px; margin-bottom:15px; border:1px solid #ffd60a; }
+        .form-group { margin-bottom:15px; }
+        .form-group label { display:block; margin-bottom:5px; color:#fb8500; font-weight:bold; }
+        .form-group input { width:100%; padding:10px; border:2px solid #ffd60a; border-radius:5px; font-size:1rem; }
+        .buttons-container { display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
+        .btn {
+            flex:1; min-width:120px;
+            padding:10px;
+            border:none; border-radius:6px;
+            font-size:1rem; font-weight:bold;
+            cursor:pointer;
+            display:flex; align-items:center; justify-content:center; gap:5px;
+            transition:0.3s;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow:0 3px 10px rgba(0,0,0,0.1); }
+        .btn-normal { background: #ffd60a; color:#333; }
+        .btn-submit { background: #2ecc71; color:#fff; }
+        .btn-reset { background: #f76c6c; color:#fff; }
+        .code-example { background: rgba(255,255,255,0.5); padding:15px; border-radius:6px; font-family:monospace; font-size:1rem; margin-top:15px; overflow-x:auto; border:1px solid #ffd60a; }
+        .summary { background:#fff9f0; border-radius:15px; padding:25px; margin-top:30px; border:2px solid #ffd60a; }
+        .summary h2 { text-align:center; font-size:2rem; color:#fb8500; margin-bottom:20px; }
+        table { width:100%; border-collapse:collapse; font-size:1rem; }
+        th, td { padding:10px; text-align:center; border-bottom:1px solid #ffd60a; }
+        th { background: rgba(255, 243, 176, 0.3); color:#fb8500; }
+        @media (max-width:768px) { .cards { grid-template-columns:1fr; } .buttons-container { flex-direction:column; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-mouse-pointer"></i> الأزرار وأنواعها في HTML</h1>
+        </header>
+
+        <div class="intro">
+            <p>تعتبر الأزرار عناصر أساسية في أي نموذج ويب. في HTML، لدينا عدة أنواع من الأزرار لكل منها وظيفة مختلفة. تعرف على الفروقات بينها وكيفية استخدامها بشكل صحيح.</p>
+            <p>هذه الصفحة تعمل باستخدام HTML وCSS فقط دون الحاجة لـ JavaScript.</p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h2><i class="fas fa-hand-pointer"></i> زر عادي</h2>
+                <div class="description">
+                    <p>الزر العادي <code>&lt;button&gt;</code> أو <code>&lt;input type="button"&gt;</code> لا يقوم بأي سلوك افتراضي.</p>
+                    <p>يُستخدم عادة لتنفيذ أوامر مخصصة عبر JavaScript ولا يؤثر على النموذج.</p>
+                </div>
+                <div class="form-demo">
+                    <div class="form-group">
+                        <label for="normal-input">أدخل اسمك:</label>
+                        <input type="text" id="normal-input" placeholder="أدخل الأسم">
+                    </div>
+                    <div class="buttons-container">
+                        <button type="button" class="btn btn-normal">
+                            <i class="fas fa-hand-pointer"></i> زر عادي
+                        </button>
+                    </div>
+                </div>
+                <div class="code-example">
+&lt;button type="button"&gt;<br>
+&nbsp;&nbsp;&lt;i class="fas fa-hand-pointer"&gt;&lt;/i&gt; زر عادي<br>
+&lt;/button&gt;
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-paper-plane"></i> زر الإرسال</h2>
+                <div class="description">
+                    <p>زر الإرسال <code>&lt;input type="submit"&gt;</code> أو <code>&lt;button type="submit"&gt;</code> يرسل بيانات النموذج إلى الخادم.</p>
+                </div>
+                <div class="form-demo">
+                    <form action="#" method="get">
+                        <div class="form-group">
+                            <label for="submit-input">أدخل الإيميل:</label>
+                            <input type="email" id="submit-input" placeholder="example@domain.com" required>
+                        </div>
+                        <div class="buttons-container">
+                            <button type="submit" class="btn btn-submit">
+                                <i class="fas fa-paper-plane"></i> إرسال البيانات
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="code-example">
+&lt;form action="/submit" method="post"&gt;<br>
+&nbsp;&nbsp;&lt;input type="email" name="email" required&gt;<br>
+&nbsp;&nbsp;&lt;button type="submit"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;i class="fas fa-paper-plane"&gt;&lt;/i&gt; إرسال البيانات<br>
+&nbsp;&nbsp;&lt;/button&gt;<br>
+&lt;/form&gt;
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-undo"></i> زر الإعادة</h2>
+                <div class="description">
+                    <p>زر الإعادة <code>&lt;input type="reset"&gt;</code> أو <code>&lt;button type="reset"&gt;</code> يعيد جميع حقول النموذج إلى قيمها الافتراضية.</p>
+                </div>
+                <div class="form-demo">
+                    <form>
+                        <div class="form-group">
+                            <label for="reset-input">أدخل رسالتك:</label>
+                            <input type="text" id="reset-input" placeholder="اكتب رسالتك هنا..." value="نص افتراضي">
+                        </div>
+                        <div class="buttons-container">
+                            <button type="reset" class="btn btn-reset">
+                                <i class="fas fa-undo"></i> إعادة التعيين
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="code-example">
+<form>
+    <input type="text" value="نص افتراضي">
+    <button type="reset"><i class="fas fa-undo"></i> إعادة التعيين</button>
+</form>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary">
+            <h2><i class="fas fa-clipboard-list"></i> ملخص أنواع الأزرار</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>النوع</th><th>الوسم</th><th>الوظيفة</th><th>مثال</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="type">زر عادي</td>
+                        <td>&lt;button&gt; أو &lt;input type="button"&gt;</td>
+                        <td>لا يقوم بأي إجراء افتراضي، يستخدم للأوامر المخصصة</td>
+                        <td>&lt;button type="button"&gt;نقر&lt;/button&gt;</td>
+                    </tr>
+                    <tr>
+                        <td class="type">زر الإرسال</td>
+                        <td>&lt;button type="submit"&gt; أو &lt;input type="submit"&gt;</td>
+                        <td>يرسل بيانات النموذج إلى الخادم</td>
+                        <td><form style="display:inline;"><input type="submit" value="إرسال"></form></td>
+                    </tr>
+                    <tr>
+                        <td class="type">زر الإعادة</td>
+                        <td>&lt;button type="reset"&gt; أو &lt;input type="reset"&gt;</td>
+                        <td>يعيد جميع المدخلات إلى القيمة الافتراضية</td>
+                        <td>&lt;button type="reset"&gt;إعادة&lt;/button&gt;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <p>الكود يستخدم HTML وCSS فقط بدون JavaScript</p>
+        </footer>
+    </div>
+</body>
+</html>

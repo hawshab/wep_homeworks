@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شرح target في HTML</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #fff3b0, #518ca3, #a0c4ff);
+            color: #333;
+            font-family: Tahoma, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(117, 45, 45, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #476888;
+            margin-bottom: 15px;
+        }
+        .card {
+            background: #fff9f0;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        .card h2 {
+            color: #79b9f5;
+            font-size: 1.5rem;
+            border-bottom: 1px solid #8f90e0;
+            margin-bottom: 10px;
+        }
+        .example {
+            background: #fef9f4;
+            font-family: monospace;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border: 1px solid #5f87bb;
+        }
+        .demo-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: linear-gradient(to right, #7b8ace, #4d3e85);
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .demo-btn:hover {
+            transform: scale(1.05);
+        }
+        table {
+            width: 100%;
+            margin-top: 15px;
+            border-collapse: collapse;
+        }
+        th, td {
+            border-bottom: 1px solid #1f4b8d;
+            padding: 8px;
+        }
+        th {
+            color: #817ba1;
+        }
+        td {
+            color: #333;
+        }
+        #self-demo {
+            display:none;
+            background: rgba(255, 235, 179, 0.4);
+            padding:10px;
+            margin-top:10px;
+            border-radius:5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>شرح target</h1>
+        <div class="card">
+            <h2>_blank</h2>
+            <p>يفتح الرابط في تبويب جديد.</p>
+            <div class="example">
+                &lt;a href="https://example.com" target="_blank"&gt;افتح&lt;/a&gt;
+            </div>
+            <a href="https://example.com" target="_blank" class="demo-btn">جرب (_blank)</a>
+        </div>
+        <div class="card">
+            <h2>_self</h2>
+            <p>يفتح الرابط في نفس الصفحة.</p>
+            <div class="example">
+                &lt;a href="#self-demo" target="_self"&gt;افتح&lt;/a&gt;
+            </div>
+            <button class="demo-btn" id="self-btn">جرب (_self)</button>
+            <div id="self-demo">
+                <p>تم فتح الرابط في نفس الصفحة!</p>
+            </div>
+        </div>
+        <div class="card">
+            <h2>_parent</h2>
+            <p>يفتح الرابط في الإطار الأب.</p>
+            <div class="example">
+                &lt;a href="الرابط" target="_parent"&gt;افتح&lt;/a&gt;
+            </div>
+            <button class="demo-btn" onclick="alert('يعمل فقط مع iframe')">جرب (_parent)</button>
+        </div>
+        <div class="card">
+            <h2>_top</h2>
+            <p>يفتح الرابط في أعلى إطار.</p>
+            <div class="example">
+                &lt;a href="الرابط" target="_top"&gt;افتح&lt;/a&gt;
+            </div>
+            <button class="demo-btn" onclick="alert('يعمل فقط مع iframe')">جرب (_top)</button>
+        </div>
+        <table>
+            <tr><th>الخاصية</th><th>الوصف</th><th>مثال عملي</th></tr>
+            <tr>
+                <td>_blank</td>
+                <td>تبويب جديد</td>
+                <td><a href="https://example.com" target="_blank" class="demo-btn" style="width:auto;">زر (_blank)</a></td>
+            </tr>
+            <tr>
+                <td>_self</td>
+                <td>نفس الصفحة</td>
+                <td><button class="demo-btn" style="width:auto;" id="table-self-btn">زر (_self)</button></td>
+            </tr>
+            <tr>
+                <td>_parent</td>
+                <td>الإطار الأب</td>
+                <td><button class="demo-btn" style="width:auto;" onclick="alert('يعمل فقط مع iframe')">زر (_parent)</button></td>
+            </tr>
+            <tr>
+                <td>_top</td>
+                <td>أعلى إطار</td>
+                <td><button class="demo-btn" style="width:auto;" onclick="alert('يعمل فقط مع iframe')">زر (_top)</button></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        document.getElementById('s

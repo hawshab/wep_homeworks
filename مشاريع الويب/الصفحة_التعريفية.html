@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> - عبدالله احمد الحوشبي</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #7fb9d1);
+            color: #fff;
+            line-height: 1.8;
+            padding: 20px;
+            min-height: 100vh;
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background-color: rgba(0, 0, 0, 0.75);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(to right, #1f1c2c, #928dab);
+            border-bottom: 4px solid #00c3ff;
+        }
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: #00c3ff;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+        }
+        .tagline {
+            font-size: 1.2rem;
+            color: #ecf0f1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 40px;
+        }
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+        .section {
+            background: linear-gradient(145deg, #2c3e50, #1a2530);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+        .section:hover {
+            transform: translateY(-10px);
+        }
+        .section-title {
+            font-size: 1.6rem;
+            color: #00c3ff;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #00c3ff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        } 
+        .section-title i {
+            background: #00c3ff;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .welcome-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .hobbies-list {
+            list-style: none;
+            padding-right: 20px;
+        }
+        .hobbies-list li {
+            margin-bottom: 15px;
+            padding: 12px;
+            background: rgba(0, 195, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s;
+        }
+        .hobbies-list li:hover {
+            background: rgba(0, 195, 255, 0.2);
+            transform: translateX(10px);
+        }
+        .hobbies-list i {
+            width: 45px;
+            height: 45px;
+            background: #00c3ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+        .hobby-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #f1c40f;
+        }
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(to right, #1f1c2c, #928dab);
+            border-top: 2px solid #00c3ff;
+        }
+        .footer-text {
+            font-size: 1.1rem;
+            color: #ecf0f1;
+        }
+        .copyright {
+            margin-top: 10px;
+            color: #bdc3c7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1> عبدالله احمد الحوشبي</h1>
+            <p class="tagline">معكم عبدالله احمد الحوشبي اهتم بمجال البرمجة وأمن المعلومات، أدرس الأمن السيبراني 😁 وأركز على أمان البيانات لأنها أصبحت ضرورة في هذا العصر.</p>
+        </header>
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-user"></i> عني</h2>
+                <p class="welcome-text">
+                    أهلاً بكم في صفحتنا! أنا  عبدالله احمد الحوشبي، طالب أمن سيبراني وشغوف بتقنية المعلومات وأمن المعلومات. 
+                     أتعلم كل يوم مهارات جيدة وأسعى دائما لبناء بيئة رقمية أكثر أمانًا.
+                </p>
+            </div>
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-heart"></i> الهوايات</h2>
+                <ul class="hobbies-list">
+                    <li>
+                        <i class="fas fa-code"></i>
+                        <div>
+                            <div class="hobby-title">البرمجة</div>
+                            <div class="hobby-desc">تطوير تطبيقات الويب والبرامج وتحسين مهاراتي في الأمن السيبراني</div>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-book"></i>
+                        <div>
+                            <div class="hobby-title">التعليم المستمر</div>
+                            <div class="hobby-desc">قراءة كتب ومقالات في التقنية وأمن المعلومات</div>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-brain"></i>
+                        <div>
+                            <div class="hobby-title">حل المشكلات</div>
+                            <div class="hobby-desc">استكشاف الثغرات والتفكير في حلول ذكية</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <p class="footer-text">شكراً لزيارتكم صفحتنا الخاصة. نسعى دائمًا لمشاركة المعرفة ونشر الوعي بأمان المعلومات.</p>
+            <p class="copyright">© 2025 جميع الحقوق محفوظة - عبدالله احمد الحوشبي</p>
+        </footer>
+    </div>
+</body>
+</html>

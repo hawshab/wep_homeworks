@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دائرة متدرجة الألوان</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;
+            min-height:100vh;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            padding:20px;
+            color:#fff;
+        }
+        .container {
+            text-align:center;
+            max-width:800px;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.4);
+        }
+        h1 {
+            margin-bottom:30px;
+            font-size:2.8rem;
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight:bold;
+            text-shadow:0 3px 6px rgba(0,0,0,0.4);
+        }
+        .circle-container { display:flex; justify-content:center; margin:20px 0; }
+        .circle {
+            width:300px;
+            height:300px;
+            border-radius:50%;
+            background: conic-gradient(
+                #00c6ff 0deg 60deg,
+                #0072ff 60deg 120deg,
+                #00ffcc 120deg 180deg,
+                #ff9a9e 180deg 240deg,
+                #f6d365 240deg 300deg,
+                #ff6a00 300deg 360deg
+            );
+            box-shadow:0 0 35px rgba(0,0,0,0.5);
+            transition: transform 0.5s ease;
+            cursor:pointer;
+        }
+        .circle:hover { transform: scale(1.08) rotate(180deg); }
+        .code-container {
+            background:#1c1c1c;
+            border-radius:10px;
+            padding:20px;
+            margin:20px 0;
+            overflow-x:auto;
+            text-align:left;
+            direction:ltr;
+        }
+        pre { color:#f8f8f2; font-family:'Fira Code', monospace; white-space:pre-wrap; }
+        .comment { color:#75715e; }
+        .property { color:#a6e22e; }
+        .value { color:#ae81ff; }
+        .selector { color:#f92672; }
+        .copy-btn {
+            background:#00c6ff;
+            color:#fff;
+            border:none;
+            padding:10px 15px;
+            margin-top:10px;
+            border-radius:5px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+        .copy-btn:hover { background:#0072ff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>دائرة ملونة متدرجة الألوان</h1>
+        
+        <div class="circle-container">
+            <div class="circle" title="انقر للنسخ"></div>
+        </div>
+        
+        <div class="code-container">
+            <pre><code><span class="comment">&lt;!-- HTML --&gt;</span>
+&lt;div class="circle"&gt;&lt;/div&gt;
+
+<span class="comment">&lt;!-- CSS --&gt;</span>
+<span class="selector">.circle</span> {
+  <span class="property">width</span>: <span class="value">300px</span>;
+  <span class="property">height</span>: <span class="value">300px</span>;
+  <span class="property">border-radius</span>: <span class="value">50%</span>;
+  <span class="property">background</span>: <span class="value">conic-gradient(
+  )</span>;
+  <span class="property">box-shadow</span>: <span class="value">0 0 35px rgba(0,0,0,0.5)</span>;
+  <span class="property">transition</span>: <span class="value">transform 0.5s ease</span>;
+}
+<span class="selector">.circle:hover</span> {
+  <span class="property">transform</span>: <span class="value">scale(1.08) rotate(180deg)</span>;
+}
+</code></pre>
+            <button class="copy-btn" onclick="copyCode()">نسخ الكود</button>
+        </div>
+    </div>
+
+    <script>
+        function copyCode() {
+            const code = document.querySelector('.code-container pre').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('تم نسخ الكود!');
+            });
+        }
+        document.querySelector('.circle').addEventListener('click', copyCode);
+    </script>
+</body>
+</html>
