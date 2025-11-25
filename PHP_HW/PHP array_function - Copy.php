@@ -1,0 +1,18 @@
+array_push($arr, $value);
+array_pop($arr);
+array_shift($arr);
+array_unshift($arr, $value);
+in_array($value, $arr);
+array_search($value, $arr);
+array_key_exists($key, $arr);
+sort($arr);
+rsort($arr);
+ksort($arr);
+krsort($arr);
+array_merge($arr1, $arr2);
+array_slice($arr, $start, $length);
+array_splice($arr, $start, $length, $replace);
+count($arr);
+array_unique($arr);
+array_values($arr);
+array_keys($arr);
