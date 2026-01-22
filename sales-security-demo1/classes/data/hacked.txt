@@ -1,0 +1,5 @@
+UserSettings object destroyed by: ::1
+Object data: {"theme":"dark","language":"en","notifications":true}
+
+[2024-01-15 10:05:00] UserSettings object destroyed by: ::1
+Object data: {"theme":"light","language":"ar","notifications":false}

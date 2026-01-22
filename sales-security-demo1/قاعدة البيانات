@@ -1,0 +1,37 @@
+-- إنشاء قاعدة البيانات
+CREATE DATABASE IF NOT EXISTS `security_demo`
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_unicode_ci;
+
+USE `security_demo`;
+
+-- جدول التعليقات
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `email` VARCHAR(100) DEFAULT NULL,
+  `comment` TEXT NOT NULL,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- جدول إعدادات المستخدم
+CREATE TABLE IF NOT EXISTS `user_settings` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `theme` VARCHAR(20) NOT NULL DEFAULT 'light',
+  `language` VARCHAR(5) NOT NULL DEFAULT 'en',
+  `notifications` TINYINT(1) NOT NULL DEFAULT 1,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- إدراج بيانات أولية
+INSERT INTO `comments` (`name`, `email`, `comment`) VALUES
+('أحمد محمد', 'ahmed@example.com', 'هذا نظام تعليقات رائع للعرض التعليمي'),
+('سارة علي', 'sara@example.com', 'يمكن اختبار ثغرة XSS هنا'),
+('محمود خالد', 'mahmoud@test.com', 'مثال: <script>alert("اختبار")</script>'),
+('لينا حسن', 'lena@demo.com', '<div style="color:blue;font-size:20px;">نص مصمم</div>');
+
+INSERT INTO `user_settings` (`theme`, `language`, `notifications`) VALUES
+('light', 'ar', 1);

@@ -1,0 +1,4 @@
+2024-01-15 10:00:00 | أحمد محمد | ahmed@example.com | هذا نظام تعليقات رائع للعرض التعليمي
+2024-01-15 10:05:00 | سارة علي | sara@example.com | يمكن اختبار ثغرة XSS هنا
+2024-01-15 10:10:00 | محمود خالد | mahmoud@test.com | مثال: <script>alert('اختبار')</script>
+2024-01-15 10:15:00 | لينا حسن | lena@demo.com | <div style="color:blue;font-size:20px;">نص مصمم</div>

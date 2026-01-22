@@ -1,0 +1,7 @@
+{
+    "theme": "light",
+    "language": "ar",
+    "notifications": true,
+    "saved_at": "2024-01-15 10:00:00",
+    "method": "json"
+}
